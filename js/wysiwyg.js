@@ -15,37 +15,50 @@ function italic() {
 }
 
 function fontsize() {
-     textfield.document.execCommand('bold',false,null);
+    var size = prompt('Enter a size 1-7','');
+     textfield.document.execCommand('FontSize',false,size);
 }
 
 
 function forecolor() {
-    textfield.document.execCommand('bold',false,null);
+    var colors = prompt('Design a color or hexadecimal color code','');
+    textfield.document.execCommand('ForeColor',false,colors);
 }
 
 
 function horizontal() {
-    textfield.document.execCommand('bold',false,null);
+    textfield.document.execCommand('inserthorizontalrule',false,null);
 }
 
 
 function unordered() {
-    textfield.document.execCommand('bold',false,null);
+    textfield.document.execCommand("InsertOrderdList",false,"newOL");
 }
 
 
 function ordered() {
-    textfield.document.execCommand('bold',false,null);
+    textfield.document.execCommand("InsertOrderdList",false,"newUL");
 }
 
 function link() {
-    textfield.document.execCommand('bold',false,null);
+    var link = prompt("Enter URL","http://");
+    textfield.document.execCommand('CreateLink',false,link);
 }
 
 function unlink() {
-    textfield.document.execCommand('bold',false,null);
+    textfield.document.execCommand('Unlink',false,null);
 }
 
 function image() {
-    textfield.document.execCommand('bold',false,null);
+    var imagesrc = prompt("Enter image location",'');
+
+    if(imagesrc != null){
+    textfield.document.execCommand('insertimage',false,imagesrc);
+    }
+}
+
+function submit_form(){
+    var theForm = document.getElementById('myform');
+    theForm.elements["mytextarea"].value = window.frames["textfield"].document.body.innerHTML;
+    theForm.submit();
 }
