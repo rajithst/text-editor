@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Editor</title>
+    <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="js/wysiwyg.js"></script>
+
+</head>
+<body onLoad="iFrameOn();">
+    <div class="container">
+    <div class="row">
+        <h2>Text editor</h2>
+
+        <form method="post" action="parse.php">
+  <div class="form-group">
+    <label for="title">title</label>
+    <input type="text" class="form-control" id="title" name="title" size="80" maxlength="80">
+  </div>
+  <div class="form-group">
+    <p>Entry Body</p>
+    
+    <div id="cp" style="padding:8px; width: 700px" >
+        
+        <input type="button" onClick="ibold()" value="B">
+        <input type="button" onClick="iunderline()" value=U>
+        <input type="button" onClick="iitalic()" value="I">
+        <input type="button" onClick="ifontsize()" value="Text Size">
+        <input type="button" onClick="iforecolor" value="Text Color">
+        <input type="button" onClick="horizontal()" value="HR">
+        <input type="button" onClick="unordered()" value="UL">
+        <input type="button" onClick="ordered()" value="OL">
+        <input type="button" onClick="ilink" value="Link">
+        <input type="button" onClick="iunlink()" value="UnLink">
+        <input type="button" onClick="image" value="Image">
+
+    </div>
+
+    <textarea style="display: none;" name="mytextarea" id="mytextarea" cols="100" rows="14"></textarea>
+    <iframe name="textfield" id="textfield style="border:#000 1px solid; width="700px;" height="300px;"></iframe>
+  </div>
+ 
+    <button name="mybtn" type="button" class="btn btn-default" value="submit data" onclick="javascript:submit_form();">POST</button>
+
+</form>
+
+
+    </div>
+
+</div>   
+</body>
+</html>
